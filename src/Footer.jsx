@@ -1,7 +1,11 @@
+import { Container } from "react-bootstrap";
+
 export function Footer() {
   return (
-    <footer>
-      <p>Instagram Clone 2025</p>
+    <footer className="footer">
+      <Container className="text-center">
+        <p>© {new Date().getFullYear()} My Instagram Clone</p>
+      </Container>
     </footer>
-  )
+  );
 }
