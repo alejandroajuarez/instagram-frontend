@@ -1,0 +1,90 @@
+/* Dark mode background and text */
+body {
+  background-color: #282828;
+  color: #fff;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Centered container */
+.container {
+  max-width: 500px;
+  margin: auto;
+}
+
+/* Navbar (Instagram style) */
+.navbar {
+  background-color: #454545 !important;
+  border-bottom: 1px solid #262626;
+}
+
+.navbar-brand {
+  color: #fff !important;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #fff !important;
+  font-size: 18px;
+}
+
+/* Cards for posts */
+.card {
+  background-color: #000;
+  border: none;
+  color: #fff;
+}
+
+.card-header {
+  background: none;
+  border-bottom: none;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Buttons (Like Instagram style) */
+.btn-primary {
+  background-color: #0095f6;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0077cc;
+}
+
+.btn-danger {
+  background-color: #ed4956;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #d32f2f;
+}
+
+/* Post text styling */
+.card-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 14px;
+}
+
+/* Footer */
+.footer {
+  background-color: #000;
+  color: #777;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}

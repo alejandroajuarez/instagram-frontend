@@ -1,19 +1,60 @@
 import axios from "axios";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Header } from "./Header";
-import { PostsPage } from "./PostsPage";
 import { Footer } from "./Footer";
+import { SignupPage } from "./SignupPage";
+import { LoginPage } from "./LoginPage";
+import { PostsPage } from "./PostsPage";
+import { PostsNew } from "./PostsNew";
+import { LogoutLink } from "./LogoutLink";
 
 axios.defaults.baseURL = "http://localhost:3000";
-axios.defaults.withCredentials = true;
+
+// Function to handle logout and redirect
+const handleLogout = () => {
+  axios.delete("/logout").then(() => {
+    localStorage.removeItem("token");
+    window.location.href = "/login"; // Redirect to login page after logout
+  });
+};
+
+// React Router Setup
+const router = createBrowserRouter([
+  {
+    element: (
+      <div>
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
+    ),
+    children: [
+      {
+        path: "/",
+        element: <PostsPage />, // Home feed
+      },
+      {
+        path: "/signup",
+        element: <SignupPage />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
+      },
+      {
+        path: "/posts/new",
+        element: <PostsNew />,
+      },
+      {
+        path: "/logout",
+        element: <LogoutLink onLogout={handleLogout} />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <div>
-      <Header />
-      <PostsPage />
-      <Footer />
-    </div>
-  )
+  return <RouterProvider router={router} />;
 }
 
 export default App;
