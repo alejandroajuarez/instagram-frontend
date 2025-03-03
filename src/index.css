@@ -1,6 +1,6 @@
 /* Dark mode background and text */
 body {
-  background-color: #282828;
+  background-color: #121212;
   color: #fff;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
@@ -11,10 +11,10 @@ body {
   margin: auto;
 }
 
-/* Navbar (Instagram style) */
 .navbar {
-  background-color: #454545 !important;
-  border-bottom: 1px solid #262626;
+  background-color: #121212 !important;
+  border-top: 1px solid #262626;
+  padding: 10px 0;
 }
 
 .navbar-brand {
@@ -23,14 +23,43 @@ body {
   font-weight: bold;
 }
 
+/* Center-aligned navbar items */
+.navbar .navbar-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  /* Limits width on larger screens */
+}
+
 .nav-link {
   color: #fff !important;
-  font-size: 18px;
+  font-size: 30px;
+  text-align: center;
+  padding: 8px 0;
+}
+
+/* Icon and label display */
+.navbar i {
+  font-size: 3.5rem;
+  display: block;
+  margin: 0 auto 4px;
+}
+
+.navbar .nav-link div {
+  font-size: 22px;
+}
+
+/* Add spacing between items */
+.navbar .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Cards for posts */
 .card {
-  background-color: #000;
+  background-color: #121212;
   border: none;
   color: #fff;
 }
@@ -87,4 +116,62 @@ body {
   text-align: center;
   padding: 10px;
   font-size: 14px;
+}
+
+/* Story styles */
+.stories-container {
+  background-color: var(--ig-card-background, #121212);
+  border-radius: 8px;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+.story-item {
+  width: 65px;
+}
+
+.story-circle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.story-border {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.story-image {
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border-radius: 50%;
+  border: 2px solid var(--ig-background, #121212);
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.story-username {
+  max-width: 65px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  color: var(--ig-primary-text, #f5f5f5);
 }
