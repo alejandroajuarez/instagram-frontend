@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import { Container, Form, Button, Card } from 'react-bootstrap';
 
 export function PostsNew() { 
   const handleCreate = (event) => {
@@ -17,34 +16,39 @@ export function PostsNew() {
   };
 
   return (
-  //   <Container className="d-flex justify-content-center">
-  //     <Card className="p-4 shadow w-50">
-  //       <h2 className="text-center">Create a New Post</h2>
-  //       <Form onSubmit={handleCreate}>
-  //         <Form.Group className="mb-3">
-  //           <Form.Label>Upload Image</Form.Label>
-  //           <Form.Control type="text" name="image_url" required />
-  //         </Form.Group>
-  //         <Form.Group className="mb-3">
-  //           <Form.Label>Caption</Form.Label>
-  //           <Form.Control name="caption" type="text" placeholder="Write a caption..." required />
-  //         </Form.Group>
-  //         <Button variant="primary" type="submit" className="w-100">Post</Button>
-  //       </Form>
-  //     </Card>
-  //   </Container>
-  // );
-      <div>
-        <h1>New Post</h1>
-          <form onSubmit={handleCreate}>
-            <div>
-              Image URL: <input name="image_url" type="text" required />
-            </div>
-            <div>
-              Caption: <input name="caption" type="text" required />
-            </div>
-            <button type='submit'>Post</button>
-          </form>
+    <div className="container p-3" style={{ maxWidth: '400px', margin: 'auto' }}>
+      <div className="card shadow-sm p-3">
+        <h5 className="mb-3 text-center">New Post</h5>
+        <form onSubmit={handleCreate}>
+          <div className="mb-3">
+            <input 
+              name="image_url" 
+              type="text" 
+              className="form-control" 
+              placeholder="Image URL" 
+              required 
+            />
+          </div>
+          <div className="mb-3">
+            <input 
+              name="caption" 
+              type="text" 
+              className="form-control" 
+              placeholder="Write a caption..." 
+              required 
+            />
+          </div>
+          <div className="d-grid">
+            <button 
+              type="submit" 
+              className="btn btn-primary"
+              style={{ backgroundColor: '#0095F6', borderColor: '#0095F6' }}
+            >
+              Share
+            </button>
+          </div>
+        </form>
       </div>
+    </div>
   );
 }

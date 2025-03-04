@@ -22,11 +22,14 @@ export function PostsIndex({ posts }) {
     </div>
 
     {/* <div className="d-flex flex-column align-items-center"> */}
+      
       <h1>Your Feed</h1>
       <div className="row w-100 d-flex justify-content-center">
         {posts.map((post) => (
           <div key={post.id} className="col-12 d-flex justify-content-center mb-4">
             <div className="card shadow" style={{ width: "90%", maxWidth: "500px" }}>
+            <h5 className="card-title"  style={{ fontSize: "20px" }}>{post.user || "Unknown User"}</h5>
+          {/* fix username on post and try to add the profile picture!!!!!!!!!!!! */}
               <img 
                 src={post.image_url} 
                 className="card-img-top" 
@@ -34,8 +37,8 @@ export function PostsIndex({ posts }) {
                 style={{ width: "100%", height: "auto", objectFit: "cover" }} 
               />
               <div className="card-body">
-                <h5 className="card-title">{post.user || "Unknown User"}</h5>
-                <p className="card-text">{post.caption}</p>
+                <p className="card-text"><b>{post.user} </b>{post.caption}</p>
+                <p className="card-text" style={{ fontSize: "13px" }}>Posted on {new Date(post.created_at).toLocaleDateString('en-US')}</p>
               </div>
             </div>
           </div>

@@ -116,6 +116,8 @@ body {
   text-align: center;
   padding: 10px;
   font-size: 14px;
+  bottom: 0;
+  position: relative;
 }
 
 /* Story styles */

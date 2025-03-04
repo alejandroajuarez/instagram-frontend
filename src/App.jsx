@@ -7,6 +7,7 @@ import { LoginPage } from "./LoginPage";
 import { PostsPage } from "./PostsPage";
 import { PostsNew } from "./PostsNew";
 import { LogoutLink } from "./LogoutLink";
+import { ProfileShow } from "./ProfileShow";
 
 axios.defaults.baseURL = "http://localhost:3000";
 
@@ -45,6 +46,17 @@ const router = createBrowserRouter([
         path: "/posts/new",
         element: <PostsNew />,
       },
+      {
+        path: "/profile/:id",
+        element: <ProfileShow /> ,
+        loader: ({ params }) => axios.get(`http://localhost:3000/profile/${params.id}.json`).then((response) => response.data),
+
+      },
+      // {
+      //   path: "/profile/:id",
+      //   element: <ProfileShow />,
+      //   loader: ({ params }) => axios.get(`/profile/${params.id}.json`).then((response) => response.data),
+      // },
       {
         path: "/logout",
         element: <LogoutLink onLogout={handleLogout} />,
